@@ -1,4 +1,4 @@
-printf "验证成功"
+#printf "验证成功"
 iptables -F
 iptables -X
 iptables -Z
@@ -7,14 +7,14 @@ ip6tables -X
 ip6tables -Z
 ip6tables=/system/bin/ip6tables
 iptables=/system/bin/iptables
-echo "初始化成功"
+#echo "初始化成功"
 #自动获取uid
 uid=`cat /data/system/packages.list | grep com.tencent.tmgp.sgame | awk '{print $2}'`
 iptables -t filter -I INPUT -m owner --uid-owner=$uid -j DROP
 iptables -t filter -A OUTPUT -m owner --uid-owner=$uid -j DROP
 
-echo "禁止王者获取本地联网成功"
-echo "正在放行正常ip"
+#echo "禁止王者获取本地联网成功"
+#echo "正在放行正常ip"
 
 
 #更新/会三方

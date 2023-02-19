@@ -1,4 +1,3 @@
-
 iptables -F
 iptables -X
 iptables -Z
@@ -10,7 +9,6 @@ iptables=/system/bin/iptables
 #echo "初始化成功"
 #自动获取uid
 uid=`cat /data/system/packages.list | grep com.tencent.tmgp.sgame | awk '{print $2}'`
-iptables -t filter -I INPUT -m owner --uid-owner=$uid -j DROP
 iptables -t filter -A OUTPUT -m owner --uid-owner=$uid -j DROP
 
 #echo "禁止王者获取本地联网成功"

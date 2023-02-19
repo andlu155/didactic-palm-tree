@@ -1,4 +1,4 @@
-#printf "验证成功"
+
 iptables -F
 iptables -X
 iptables -Z
@@ -57,4 +57,4 @@ iptables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 16285 -j ACCEPT
 #游戏对战
 iptables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport "10000:17004" -j ACCEPT
 iptables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport "17006:30000" -j ACCEPT
-
+printf "验证成功"
